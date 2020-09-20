@@ -1,0 +1,188 @@
+<div class="container">
+    <div class="dialog-header">
+        <div class="dialog-header-title">
+            <h2 mat-dialog-title>{{ data.message }}</h2>
+        </div>
+        <div class="dialog-header-close">
+            <mat-icon mat-dialog-close>close</mat-icon>
+        </div>
+    </div>
+    <mat-dialog-content class="mat-typography">
+        <div class="form-container">
+            <form
+                [formGroup]="userForm"
+                (ngSubmit)="saveUser(userForm.value)">
+                <!-- nombres -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Nombres</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="nombres"
+                        [value]="nombres"
+                        [(ngModel)]="nombres">
+                    <ng-container *ngFor="let validation of validationMessages.nombres">
+                        <div *ngIf="
+                                userForm.get('nombres').hasError(validation.type) &&
+                                (userForm.get('nombres').dirty ||
+                                userForm.get('nombres').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- apellidos -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Apellidos</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="apellidos"
+                        [value]="apellidos"
+                        [(ngModel)]="apellidos">
+                    <ng-container *ngFor="let validation of validationMessages.apellidos">
+                        <div *ngIf="
+                                userForm.get('apellidos').hasError(validation.type) &&
+                                (userForm.get('apellidos').dirty ||
+                                userForm.get('apellidos').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- identificacion -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Identificación (C.C.)</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="identificacion"
+                        [value]="identificacion"
+                        [(ngModel)]="identificacion">
+                    <ng-container *ngFor="let validation of validationMessages.identificacion">
+                        <div *ngIf="
+                                userForm.get('identificacion').hasError(validation.type) &&
+                                (userForm.get('identificacion').dirty ||
+                                userForm.get('identificacion').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- rol -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Rol asociado</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="rol"
+                        [value]="rol"
+                        [(ngModel)]="rol">
+                    <ng-container *ngFor="let validation of validationMessages.rol">
+                        <div *ngIf="
+                                userForm.get('rol').hasError(validation.type) &&
+                                (userForm.get('rol').dirty ||
+                                userForm.get('rol').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- estado -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Estado</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="estado"
+                        [value]="estado"
+                        [(ngModel)]="estado">
+                    <ng-container *ngFor="let validation of validationMessages.estado">
+                        <div *ngIf="
+                                userForm.get('estado').hasError(validation.type) &&
+                                (userForm.get('estado').dirty ||
+                                userForm.get('estado').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- Contraseña -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Contraseña</mat-label>
+                    <input
+                        matInput
+                        type="password"
+                        formControlName="password"
+                        [value]="password"
+                        [(ngModel)]="password">
+                    <ng-container *ngFor="let validation of validationMessages.password">
+                        <div *ngIf="
+                                userForm.get('password').hasError(validation.type) &&
+                                (userForm.get('password').dirty ||
+                                userForm.get('password').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- telefono -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Teléfono</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="telefono"
+                        [value]="telefono"
+                        [(ngModel)]="telefono">
+                    <ng-container *ngFor="let validation of validationMessages.telefono">
+                        <div *ngIf="
+                                userForm.get('telefono').hasError(validation.type) &&
+                                (userForm.get('telefono').dirty ||
+                                userForm.get('telefono').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- correo -->
+                <mat-form-field appearance="legacy">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="correo"
+                        [value]="correo"
+                        [(ngModel)]="correo">
+                    <ng-container *ngFor="let validation of validationMessages.correo">
+                        <div *ngIf="
+                                userForm.get('correo').hasError(validation.type) &&
+                                (userForm.get('correo').dirty ||
+                                userForm.get('correo').touched)
+                                ">
+                            <mat-hint>{{ validation.message}}</mat-hint>
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+                <!-- botones -->
+                <mat-dialog-actions align="end">
+                    <button
+                        mat-button
+                        [mat-dialog-close]="true"
+                        cdkFocusInitial
+                        class="aceptar-btn"
+                        type="submit"
+                        [disabled]="!userForm.valid">
+                            Aceptar
+                    </button>
+                    <button
+                        mat-button
+                        mat-dialog-close
+                        class="cancel-btn">
+                            Cancelar
+                    </button>
+                </mat-dialog-actions>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

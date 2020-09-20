@@ -1,0 +1,61 @@
+<div class="filtros">
+    <div class="title">
+        <mat-icon color="primary">person_add_alt_1</mat-icon>
+        <h3>Filtrar búsqueda</h3>
+    </div>
+    <div class="form-filter">
+        <!-- nombres -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Nombres</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <!-- apellidos -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Apellidos</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <!-- identificacion -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Identificación (C.C.)</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <!-- rol -->
+        <mat-form-field appearance="fill">
+            <mat-label>Rol Asociado</mat-label>
+            <mat-select [value]="selectedRol" name="rol">
+            <mat-option *ngFor="let rol of roles" [value]="rol.value">
+                {{rol.viewValue}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- estado -->
+        <mat-form-field appearance="fill">
+            <mat-label>Estado</mat-label>
+            <mat-select [value]="selectedState" name="estado">
+            <mat-option *ngFor="let estado of estados" [value]="estado.value">
+                {{estado.viewValue}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- contraseña -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password">
+        </mat-form-field>
+        <!-- telefono -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <!-- correo -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+    </div>
+    <!-- botones -->
+    <div class="buttons">
+    <button class="aceptar-btn">Filtrar</button>
+    <button class="limpiar-btn">Limpiar</button>
+    </div>
+</div>

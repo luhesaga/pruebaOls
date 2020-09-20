@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pruebaols": {
+      "hosting": {
+        "pruebaOls": [
+          "pruebaols"
+        ]
+      }
+    }
+  }
+}

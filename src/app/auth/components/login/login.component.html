@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="main">
+        <div class="main-info">
+            <div class="main-info-text">
+                <h3>Aplicación</h3>
+                <h3>OLSoftware</h3>
+                <p>Prueba práctica Front-end senior</p>
+            </div>
+        </div>
+        <div class="main-login">
+            <div class="main-loginForm">
+                <form
+                    [formGroup]="loginForm"
+                    (ngSubmit)="loginUser(loginForm.value)">
+                    <h3>Inicio de sesión</h3>
+                    <div class="loginForm-inputs">
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Usuario</mat-label>
+                            <input
+                                matInput
+                                type="email"
+                                formControlName="email">
+                            <mat-icon matSuffix>account_circle</mat-icon>
+                            <ng-container *ngFor="let validation of validationMessages.email">
+                                <div *ngIf="
+                                        loginForm.get('email').hasError(validation.type) &&
+                                        (loginForm.get('email').dirty ||
+                                        loginForm.get('email').touched)
+                                        ">
+                                    <mat-hint>{{ validation.message}}</mat-hint>
+                                </div>
+                            </ng-container>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Contraseña</mat-label>
+                            <input
+                                matInput
+                                type="password"
+                                formControlName="password">
+                            <mat-icon matSuffix>lock</mat-icon>
+                            <ng-container *ngFor="let validation of validationMessages.password">
+                                <div *ngIf="
+                                        loginForm.get('password').hasError(validation.type) &&
+                                        (loginForm.get('password').dirty ||
+                                        loginForm.get('password').touched)
+                                        ">
+                                    <mat-hint>{{ validation.message}}</mat-hint>
+                                </div>
+                            </ng-container>
+                        </mat-form-field>
+                    </div>
+                    <button
+                        [disabled]="!loginForm.valid"
+                        type="submit">
+                            Iniciar sesión
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>OLSoftware - 2020</p>
+    </footer>
+</div>

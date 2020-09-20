@@ -1,0 +1,133 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 280px;
+}
+
+.sidenav .mat-toolbar {
+  background: #2d70ca;
+  color: white;
+}
+
+.logo {
+  border-bottom: 1px solid white;
+  margin: 0 10px;
+  justify-content: flex-start !important;
+  cursor: pointer;
+}
+
+.logo mat-icon {
+  margin-right: 15px;
+}
+
+.mat-drawer {
+  background: #2d70ca;
+  color: white;
+}
+
+.mat-toolbar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-toolbar .toolbar-title span {
+  color: #3f51b5;
+}
+
+.mat-toolbar .toolbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.mat-toolbar .toolbar-user mat-icon {
+  margin: 0 10px;
+}
+
+.mat-toolbar .toolbar-user p {
+  font-size: 0.8em;
+  margin: 0 15px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  background: white;
+}
+
+.mat-list-item {
+  color: white;
+  font-size: 1em;
+}
+
+.mat-sidenav-content {
+  background:#f5f5f5;
+}
+
+.mat-expansion-panel {
+  background: transparent;
+  color: white;
+  margin: 15px 0;
+}
+
+.mat-expansion-panel-header-title {
+  color: white;
+  flex-grow: 0;
+}
+
+.mat-expansion-panel-header-description {
+  color: white;
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: transparent;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-indicator::after {
+  color: white;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.list-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-option {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.list-option span {
+  margin-left: 15px;
+  font-size: 1.3em;
+}
+
+.list-option a {
+  margin-left: 15px;
+  font-size: 1em;
+}
+
+footer {
+  background: white;
+  width: 100%;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+footer p {
+  margin: 0 25px;
+  padding: 5px 0;
+}
+
+

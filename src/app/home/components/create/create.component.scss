@@ -1,0 +1,50 @@
+.container {
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: normal;
+    margin-bottom: 30px;
+}
+
+.dialog-header-close mat-icon {
+    color: red;
+}
+
+.mat-dialog-content {
+    width: 90%;
+    height: 100%;
+}
+
+form {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 20px;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.mat-dialog-actions {
+    grid-column-start: 1;
+    grid-column-end: span 2
+}
+
+.aceptar-btn {
+    background: #89c045;
+    color: white;
+}
+
+.cancel-btn {
+    background: white;
+    border: 1px solid #89c045;
+    color: #89c045;
+}

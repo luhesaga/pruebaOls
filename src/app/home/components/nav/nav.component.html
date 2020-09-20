@@ -1,0 +1,95 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="logo" routerLink="/home"><mat-icon matListIcon>fiber_manual_record</mat-icon>OLSoftware</mat-toolbar>
+    <mat-nav-list dense>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matListIcon>map</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Programación
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matListIcon>format_list_bulleted</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Gestión de Operaciones
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matListIcon>tune</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Perfiles
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+        <div class="list-options">
+          <div class="list-option">
+            <span>R</span>
+            <a matLine routerLink="/home/usuario">Roles</a>
+          </div>
+          <div class="list-option">
+            <span>U</span>
+            <a matLine>Usuario</a>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matListIcon>insert_drive_file</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Reportes
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+      <div class="toolbar-title">
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        color="primary"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Prueba Front-end</span>
+      </div>
+      <div class="toolbar-user">
+        <mat-icon matSuffix color="primary">account_circle</mat-icon>
+        <p>{{ logguedUser?.nombres + ' ' + logguedUser?.apellidos |titlecase }}</p>
+        <mat-icon
+          matSuffix
+          color="primary"
+          (click)="logout()">
+            exit_to_app
+        </mat-icon>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    <footer>
+      <p>OLSoftware - 2020</p>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
